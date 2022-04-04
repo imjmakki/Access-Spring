@@ -63,6 +63,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .encode("user")).roles("USER").build();
         UserDetails admin = User.builder().username("admin").password(passwordEncoder()
                 .encode("admin")).roles("ADMIN").build();
-        return new InMemoryUserDetailsManager(ramesh, admin);
+        return new InMemoryUserDetailsManager(user, admin);
     }
 }
